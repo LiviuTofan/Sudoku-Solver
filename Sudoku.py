@@ -12,16 +12,20 @@ for i in range(9):
     matrix.append(row_list)
 
 # Execute functions to solve the sudoku
-while True:
-    initial_matrix = [row[:] for row in matrix]
-    column_function(matrix)
-    row_function(matrix)
-    pieces(matrix)
-    algorithm(matrix)
+def do_sudoku(matrix):
+    while True:
+        initial_matrix = [row[:] for row in matrix]
+        column_function(matrix)
+        row_function(matrix)
+        pieces(matrix)
+        algorithm(matrix)
 
-    if initial_matrix == matrix:
-        break
+        if initial_matrix == matrix:
+            break
 
-
-for row in matrix:
-    print(row)
+do_sudoku(matrix)
+if any(0 in row for row in matrix):
+    print("Not done")
+else:
+    for row in matrix:
+        print(row)
