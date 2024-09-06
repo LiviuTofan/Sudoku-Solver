@@ -19,8 +19,11 @@ def do_sudoku(matrix):
         row_function(matrix)
         pieces(matrix)
         algorithm(matrix)
+        print("AICI")
 
         if initial_matrix == matrix:
+            for row in matrix:
+                print(row)
             break
 
 do_sudoku(matrix)
