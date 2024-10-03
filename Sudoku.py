@@ -2,6 +2,7 @@ from row import row_function
 from column import column_function
 from submatrices import pieces
 from solver import algorithm
+from hard_sudoku import hard_sudoku
 
 matrix = []
 
@@ -19,16 +20,15 @@ def do_sudoku(matrix):
         row_function(matrix)
         pieces(matrix)
         algorithm(matrix)
-        print("AICI")
 
         if initial_matrix == matrix:
-            for row in matrix:
-                print(row)
             break
 
 do_sudoku(matrix)
 if any(0 in row for row in matrix):
     print("Not done")
+    print("Submatrix and Element and Possible indexes")
+    #hard_sudoku(multiple_choices)
 else:
     for row in matrix:
         print(row)
